@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import { GoAlertFill } from "react-icons/go";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { createIssueSchema } from "@/app/ValidationSchemas";
+import ErrorMessage from "@/app/components/ErrorMessage";
 import { z } from "zod";
 
 type IssueForm = z.infer<typeof createIssueSchema>;
@@ -48,11 +49,7 @@ const NewIssuePage = () => {
         className="space-y-3"
       >
         <TextField.Root placeholder="Enter Title" {...register("title")} />
-        {errors.title && (
-          <Text color="red" as="p">
-            {errors.title.message}
-          </Text>
-        )}
+        <ErrorMessage>{errors.title?.message}</ErrorMessage>
         <Controller
           name="description"
           control={control}
@@ -60,11 +57,7 @@ const NewIssuePage = () => {
             <SimpleMDE placeholder="Enter Description..." {...field} />
           )}
         />
-        {errors.description && (
-          <Text color="red" as="p">
-            {errors.description.message}
-          </Text>
-        )}
+        <ErrorMessage>{errors.description?.message}</ErrorMessage>
         <Button>Submit</Button>
       </form>
     </div>
