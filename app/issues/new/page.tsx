@@ -11,8 +11,7 @@ import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Callout, TextField } from "@radix-ui/themes";
 
-import Spinner from "@/app/components/Spinner";
-import ErrorMessage from "@/app/components/ErrorMessage";
+import { ErrorMessage, Spinner } from "@/app/components";
 import { createIssueSchema } from "@/app/ValidationSchemas";
 
 const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
