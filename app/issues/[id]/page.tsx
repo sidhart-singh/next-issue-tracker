@@ -3,7 +3,7 @@ import prisma from "@/prisma/client";
 import { notFound } from "next/navigation";
 import { Box, Grid } from "@radix-ui/themes";
 
-import EditIssueButon from "./edit/EditIssueButon";
+import EditIssueButon from "./EditIssueButon";
 import IssueDetails from "./IssueDetails";
 
 interface Props {

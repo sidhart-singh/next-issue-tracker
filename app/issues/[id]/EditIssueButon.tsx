@@ -1,6 +1,6 @@
-import { Button } from "@radix-ui/themes";
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
+import { Button } from "@radix-ui/themes";
 import { HiOutlinePencilSquare } from "react-icons/hi2";
 
 const EditIssueButon = ({ issueId }: { issueId: number }) => {

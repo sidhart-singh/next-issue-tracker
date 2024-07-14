@@ -13,6 +13,8 @@ const LoadingIssueDetailPage = async () => {
       </Flex>
       <Card className="prose" mt={"4"}>
         <Skeleton />
+        <Skeleton />
+        <Skeleton />
       </Card>
     </Box>
   );
