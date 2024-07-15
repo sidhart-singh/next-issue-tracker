@@ -1,12 +1,23 @@
 import React from "react";
 import { AlertDialog, Button, Flex } from "@radix-ui/themes";
 import { MdOutlineDeleteForever } from "react-icons/md";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const DeleteIssueButton = ({ issueId }: { issueId: number }) => {
+  const router = useRouter();
+
   return (
     <AlertDialog.Root>
       <AlertDialog.Trigger>
-        <Button color="red">
+        <Button
+          color="red"
+          onClick={async () => {
+            await axios.delete("/api/issues/" + issueId);
+            router.push("/issues");
+            router.refresh();
+          }}
+        >
           <MdOutlineDeleteForever size={20} />
           Delete Issue
         </Button>
