@@ -15,6 +15,8 @@ import {
 } from "@radix-ui/themes";
 import classNames from "classnames";
 
+import { Skeleton } from "@/app/components";
+
 const Navbar = () => {
   return (
     <nav className="border-b mb-5 px-5 py-3">
@@ -63,7 +65,7 @@ const NavLinks = () => {
 const AuthStatus = () => {
   const { status, data: session } = useSession();
 
-  if (status === "loading") return;
+  if (status === "loading") return <Skeleton width={"3rem"} />;
 
   if (status === "unauthenticated")
     return (
