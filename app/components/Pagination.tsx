@@ -31,6 +31,7 @@ const Pagination = ({ itemCount, pageSize, currentPage }: Props) => {
 
   return (
     <Flex align={"center"} gap={"2"}>
+      <Text>Pagination</Text>
       <Button
         variant={"soft"}
         disabled={currentPage == 1}
